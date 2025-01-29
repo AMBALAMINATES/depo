@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMBA LAMINATES</title>
+    <link rel="icon" href="images.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="s.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar Section -->
+        <div class="sidebar">
+            <h2>AMBA LAMINATES DEPO'S PVT LTD.<BR><BR>( ALL SHEETS)</h2>
+            <ul>
+                <li><a href="#">SHEETS</a></li>
+            </ul>
+        </div>
+
+        <!-- Main Dashboard Section -->
+        <div class="dashboard">
+            <h1 style="text-align: center;">AMBA LAMINATES DEPO'S PVT LTD.</h1>
+            
+            <!-- Date Filter Section -->
+            <div class="date-filter">
+                <label for="start-date">Start Date:</label>
+                <input type="date" id="start-date">
+                <label for="end-date">End Date:</label>
+                <input type="date" id="end-date">
+                <button onclick="applyDateFilter()">Apply Filter</button>
+                
+                <!-- Dropdown to select depot -->
+                <select id="sheet-dropdown" onchange="fetchDepotData()">
+                    <option value="select depo">SELECT DEPO</option>
+                    <option value="ludhiana">DEPO LUDHIANA</option>
+                    <option value="ghaziabad">DEPO GHAZIABAD</option>
+                    <option value="pune">DEPO PUNE</option>
+                    <option value="patna">DEPO PATNA</option>
+                </select>
+            </div>
+
+            <!-- Stats cards -->
+            <div class="stats">
+                <div class="stat-card">
+                    <h2>Total Stock</h2>
+                    <p id="total-stock">Loading...</p>
+                </div>
+                <div class="stat-card">
+                    <h2>Total Dispatch</h2>
+                    <p id="total-dispatch">Loading...</p>
+                </div>
+                <div class="stat-card">
+                    <h2>Total Purchase</h2>
+                    <p id="total-purchase">Loading...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // URLs for each depot's sheets (stock, dispatch, and purchase)
+        const depotDataUrls = {
+            'ludhiana': {
+                stock: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vR7pPNzdOfIhpyhiaziaKt9OOJRl92ntl_vQrOpL20VZ_ODsPU2MocXcli_vxTmivtlBsoZZR6c7PxA/pub?gid=1105757494&single=true&output=csv&sheet=IMS',
+                dispatch: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vR7pPNzdOfIhpyhiaziaKt9OOJRl92ntl_vQrOpL20VZ_ODsPU2MocXcli_vxTmivtlBsoZZR6c7PxA/pub?gid=1865060622&single=true&output=csv',
+                purchase: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vR7pPNzdOfIhpyhiaziaKt9OOJRl92ntl_vQrOpL20VZ_ODsPU2MocXcli_vxTmivtlBsoZZR6c7PxA/pub?gid=1525898616&single=true&output=csv&sheet=In/Out(Manual)'
+            },
+            
+            };
+        
+
+        // Function to apply date filters
+        function applyDateFilter() {
+            fetchDepotData();  // Re-fetch the data when date filter is applied
+        }
+
+        // Fetch Depot Data
+        function fetchDepotData() {
+            const selectedDepot = document.getElementById("sheet-dropdown").value;
+            const startDate = document.getElementById("start-date").value;
+            const endDate = document.getElementById("end-date").value;
+
+            if (selectedDepot === "select depo") return; // Do nothing if no depot is selected
+
+            const urls = depotDataUrls[selectedDepot];
+
+            // Fetch total stock without any date filter
+            fetchTotalStock(urls.stock);
+
+            // Apply date filter only for dispatch and purchase
+            fetchData(urls.dispatch, startDate, endDate, "total-dispatch");
+            fetchData(urls.purchase, startDate, endDate, "total-purchase");
+        }
+
+        // Fetch and calculate the total stock (no date filter)
+        function fetchTotalStock(url) {
+            fetch(url)
+                .then(response => response.text())
+                .then(stockData => {
+                    const totalStock = calculateTotalStock(stockData);
+                    document.getElementById("total-stock").textContent = totalStock;
+                })
+                .catch(error => {
+                    console.error('Error fetching stock data:', error);
+                });
+        }
+
+        // Fetch and calculate the data for dispatch or purchase
+        function fetchData(url, startDate, endDate, elementId) {
+            fetch(url)
+                .then(response => response.text())
+                .then(data => {
+                    const total = processData(data, startDate, endDate);
+                    document.getElementById(elementId).textContent = total;
+                })
+                .catch(error => {
+                    console.error(`Error fetching data for ${elementId}:`, error);
+                });
+        }
+
+        // Parse date string (dd mm yy) to Date object
+        function parseDate(dateStr) {
+            if (!dateStr) return null;
+            const parts = dateStr.trim().split(/[\/\s-]/);
+            if (parts.length < 3) return null;
+
+            let [day, month, year] = parts;
+            if (year.length === 2) year = "20" + year;
+            
+            return new Date(`${year}-${month}-${day}`);
+        }
+
+        // Calculate the total stock from quantity column (column 5)
+        function calculateTotalStock(csvText) {
+            const rows = csvText.split("\n");
+            if (rows.length < 2) return 0;
+
+            let total = 0;
+            rows.slice(1).forEach(row => {
+                const columns = row.split(",");
+                if (columns.length < 5) return;  // Skip rows with invalid data
+
+                const quantity = parseInt(columns[4] || 0);  // Column 5 (index 4) is the quantity
+                total += quantity;
+            });
+
+            return total;
+        }
+
+        // Process data based on date filter
+        function processData(csvText, startDate, endDate) {
+            const rows = csvText.split("\n");
+            if (rows.length < 2) return 0;
+
+            const headers = rows[0].split(",");
+            const dateIndex = headers.findIndex(h => h.toLowerCase().includes("date"));
+            const quantityIndex = headers.findIndex(h => h.toLowerCase().includes("quantity") || h.toLowerCase().includes("qty"));
+
+            if (dateIndex === -1 || quantityIndex === -1) return 0;
+
+            let total = 0;
+            const start = startDate ? new Date(startDate) : null;
+            const end = endDate ? new Date(endDate) : null;
+
+            rows.slice(1).forEach(row => {
+                const columns = row.split(",");
+                if (columns.length <= Math.max(dateIndex, quantityIndex)) return;
+
+                const dateStr = columns[dateIndex]?.trim();
+                const value = parseInt(columns[quantityIndex] || 0, 10);
+                const rowDate = parseDate(dateStr);
+
+                if (!rowDate) return;
+
+                if ((start && end && rowDate >= start && rowDate <= end) ||
+                    (start && end && start.getTime() === end.getTime() && rowDate.getTime() === start.getTime())) {
+                    total += value;
+                }
+            });
+
+            return total;
+        }
+    </script>
+</body>
+</html>
