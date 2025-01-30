@@ -17,11 +17,11 @@
             </ul>
         </div>
 
-        <!-- Main Dashboard Section -->
+        
         <div class="dashboard">
             <h1 style="text-align: center;">AMBA LAMINATES DEPO'S PVT LTD.</h1>
             
-            <!-- Date Filter Section -->
+           
             <div class="date-filter">
                 <label for="start-date">Start Date:</label>
                 <input type="date" id="start-date">
@@ -29,13 +29,18 @@
                 <input type="date" id="end-date">
                 <button onclick="applyDateFilter()">Apply Filter</button>
                 
-                <!-- Dropdown to select depot -->
+                
                 <select id="sheet-dropdown" onchange="fetchDepotData()">
                     <option value="select depo">SELECT DEPO</option>
                     <option value="ludhiana">DEPO LUDHIANA</option>
                     <option value="kolkata">DEPO KOLKATA</option>
                     <option value="pune">DEPO PUNE</option>
-                    <option value="patna">DEPO PATNA</option>
+                    <option value="bihar">DEPO BIHAR</option>
+                    <option value="jaipur">DEPO JAIPUR</option>
+                    <option value="hyderabad">DEPO HYDERABAD</option>
+                    <option value="bangalore">DEPO BANGALORE</option>
+                    <option value="mumbai">DEPO MUMBAI</option>
+                    <option value="noida"> DEPO NOIDA</option>
                 </select>
             </div>
 
@@ -70,14 +75,55 @@
                 dispatch: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQZBUcXwlTlsVyl86qCPETDgTB0tIIvm9-Z_i-eS5WmbjMOS38G1jzpgtrNUbj496bnfmRjpUVj-v62/pub?gid=1865060622&single=true&output=csv',
                 purchase: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQZBUcXwlTlsVyl86qCPETDgTB0tIIvm9-Z_i-eS5WmbjMOS38G1jzpgtrNUbj496bnfmRjpUVj-v62/pub?gid=1525898616&single=true&output=csv&sheet=In/Out(Manul)'
 
+            },
+
+            'pune' :{
+                stock: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ2RxpcHgMDUXi1FoXf1ojiUtsHmUc9o9AJKsBOloffhdH5MuTJpzQWM3XMQr6vTMCtQ6HzXVCL5Zzj/pub?gid=1105757494&single=true&output=csv',
+                dispatch: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ2RxpcHgMDUXi1FoXf1ojiUtsHmUc9o9AJKsBOloffhdH5MuTJpzQWM3XMQr6vTMCtQ6HzXVCL5Zzj/pub?gid=1865060622&single=true&output=csv',
+                purchase : 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ2RxpcHgMDUXi1FoXf1ojiUtsHmUc9o9AJKsBOloffhdH5MuTJpzQWM3XMQr6vTMCtQ6HzXVCL5Zzj/pub?gid=1525898616&single=true&output=csv'
+            },
+
+            'bihar': {
+                stock: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTaZa56cQ9KsG6SldZ6oUCTd3Jty3toWw2boaNk2oMJWVT8nbPUSJEvMD7bpAHI3UxMgsF223pnt5jY/pub?gid=1105757494&single=true&output=csv',
+                dispatch: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTaZa56cQ9KsG6SldZ6oUCTd3Jty3toWw2boaNk2oMJWVT8nbPUSJEvMD7bpAHI3UxMgsF223pnt5jY/pub?gid=1865060622&single=true&output=csv',
+                purchase: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTaZa56cQ9KsG6SldZ6oUCTd3Jty3toWw2boaNk2oMJWVT8nbPUSJEvMD7bpAHI3UxMgsF223pnt5jY/pub?gid=1525898616&single=true&output=csv'
+            },
+            'jaipur':{
+                stock: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT2C0Edo5nQ7uKGMbSz9LGKkX-r3nB8mFMIJfM6zMxvg3OTvRtjh67QBogfxZy7DVOiTYo-A6b0BXU3/pub?gid=1105757494&single=true&output=csv',
+                dispatch: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT2C0Edo5nQ7uKGMbSz9LGKkX-r3nB8mFMIJfM6zMxvg3OTvRtjh67QBogfxZy7DVOiTYo-A6b0BXU3/pub?gid=1865060622&single=true&output=csv',
+                purchase: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT2C0Edo5nQ7uKGMbSz9LGKkX-r3nB8mFMIJfM6zMxvg3OTvRtjh67QBogfxZy7DVOiTYo-A6b0BXU3/pub?gid=1525898616&single=true&output=csv'
+
+
+            },
+            'hyderabad':{
+                stock: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTwJH9ne9oJLOMPgFbqn9bq1N2i79HGTYLKXTbcFPsFjjvAsVEACQ6Pv44HP0ykpr0H4dD3LWd3X1yb/pub?gid=1105757494&single=true&output=csv',
+                dispatch : 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTwJH9ne9oJLOMPgFbqn9bq1N2i79HGTYLKXTbcFPsFjjvAsVEACQ6Pv44HP0ykpr0H4dD3LWd3X1yb/pub?gid=1865060622&single=true&output=csv',
+                purchase: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTwJH9ne9oJLOMPgFbqn9bq1N2i79HGTYLKXTbcFPsFjjvAsVEACQ6Pv44HP0ykpr0H4dD3LWd3X1yb/pub?gid=1525898616&single=true&output=csv'
+            },
+
+            'bangalore':{
+                stock:'https://docs.google.com/spreadsheets/d/e/2PACX-1vRJjERoL5Vy4T6YDvQ-_g3RrERwzt9lR0wmCn1bg8dnLad1SPTbLysnZuJTQ66N_bx_KUcsur8jCkf-/pub?gid=1105757494&single=true&output=csv',
+                dispatch: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRJjERoL5Vy4T6YDvQ-_g3RrERwzt9lR0wmCn1bg8dnLad1SPTbLysnZuJTQ66N_bx_KUcsur8jCkf-/pub?gid=1865060622&single=true&output=csv',
+                purchase: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRJjERoL5Vy4T6YDvQ-_g3RrERwzt9lR0wmCn1bg8dnLad1SPTbLysnZuJTQ66N_bx_KUcsur8jCkf-/pub?gid=1525898616&single=true&output=csv'
+            },
+
+            'mumbai':{
+                stock:'https://docs.google.com/spreadsheets/d/e/2PACX-1vT-0ceROfYipuMAr0WkxbbIDMmQVsp4aE8BBRgHFEw1twpUQmCRghm3ZN2ZFZzdf1n8RlTfwpyfz9mH/pub?gid=1105757494&single=true&output=csv',
+                dispatch: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT-0ceROfYipuMAr0WkxbbIDMmQVsp4aE8BBRgHFEw1twpUQmCRghm3ZN2ZFZzdf1n8RlTfwpyfz9mH/pub?gid=1865060622&single=true&output=csv',
+                purchase: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT-0ceROfYipuMAr0WkxbbIDMmQVsp4aE8BBRgHFEw1twpUQmCRghm3ZN2ZFZzdf1n8RlTfwpyfz9mH/pub?gid=1525898616&single=true&output=csv'
+            },
+            'noida':{
+                stock: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQIED3dY_tkzrV31jBMKpRKsSq3t1PaTdWsJhbNYdGvRiK-lEyQgxG6e2indym7H_3NO7PUNZDoVe_2/pub?gid=1105757494&single=true&output=csv',
+                dispatch: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQIED3dY_tkzrV31jBMKpRKsSq3t1PaTdWsJhbNYdGvRiK-lEyQgxG6e2indym7H_3NO7PUNZDoVe_2/pub?gid=1865060622&single=true&output=csv',
+                purchase : 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQIED3dY_tkzrV31jBMKpRKsSq3t1PaTdWsJhbNYdGvRiK-lEyQgxG6e2indym7H_3NO7PUNZDoVe_2/pub?gid=1525898616&single=true&output=csv'
             }
             
             };
         
 
-        // Function to apply date filters
+       
         function applyDateFilter() {
-            fetchDepotData();  // Re-fetch the data when date filter is applied
+            fetchDepotData();  
         }
 
         // Fetch Depot Data
@@ -86,11 +132,10 @@
             const startDate = document.getElementById("start-date").value;
             const endDate = document.getElementById("end-date").value;
 
-            if (selectedDepot === "select depo") return; // Do nothing if no depot is selected
-
+            if (selectedDepot === "select depo") return; 
             const urls = depotDataUrls[selectedDepot];
 
-            // Fetch total stock without any date filter
+           
             fetchTotalStock(urls.stock);
 
             // Apply date filter only for dispatch and purchase
@@ -98,7 +143,7 @@
             fetchData(urls.purchase, startDate, endDate, "total-purchase");
         }
 
-        // Fetch and calculate the total stock (no date filter)
+        
         function fetchTotalStock(url) {
             fetch(url)
                 .then(response => response.text())
@@ -111,7 +156,7 @@
                 });
         }
 
-        // Fetch and calculate the data for dispatch or purchase
+      
         function fetchData(url, startDate, endDate, elementId) {
             fetch(url)
                 .then(response => response.text())
@@ -124,7 +169,7 @@
                 });
         }
 
-        // Parse date string (dd mm yy) to Date object
+        
         function parseDate(dateStr) {
             if (!dateStr) return null;
             const parts = dateStr.trim().split(/[\/\s-]/);
@@ -136,7 +181,7 @@
             return new Date(`${year}-${month}-${day}`);
         }
 
-        // Calculate the total stock from quantity column (column 5)
+        
         function calculateTotalStock(csvText) {
             const rows = csvText.split("\n");
             if (rows.length < 2) return 0;
@@ -144,16 +189,15 @@
             let total = 0;
             rows.slice(1).forEach(row => {
                 const columns = row.split(",");
-                if (columns.length < 5) return;  // Skip rows with invalid data
-
-                const quantity = parseInt(columns[4] || 0);  // Column 5 (index 4) is the quantity
+                if (columns.length < 5) return; 
+                const quantity = parseInt(columns[4] || 0);  
                 total += quantity;
             });
 
             return total;
         }
 
-        // Process data based on date filter
+       
         function processData(csvText, startDate, endDate) {
             const rows = csvText.split("\n");
             if (rows.length < 2) return 0;
