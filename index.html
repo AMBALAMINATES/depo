@@ -4,45 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AMBA LAMINATES</title>
-    <link rel="icon" href="images.jpg" type="image/x-icon">
     <link rel="stylesheet" href="s.css">
 </head>
 <body>
     <div class="container">
-        <!-- Sidebar Section -->
+        <!-- Sidebar -->
         <div class="sidebar">
-            <h2>AMBA LAMINATES DEPO'S PVT LTD.<BR><BR>( ALL SHEETS)</h2>
+            <h2>AMBA LAMINATES DEPO'S PVT LTD.<br>(ALL SHEETS)</h2>
             <ul>
-                <li><a href="#">SHEETS</a></li><BR>
-                <li><a href="https://docs.google.com/spreadsheets/d/1zPxDreLY-n6QTFsU97oOzhrpzA0n8lYm4B52nEB3YHg/edit?usp=sharing">DEPO LUDHIANA</a></li>
-                <li><a href="https://docs.google.com/spreadsheets/d/1lMpMmZgmGq7jbaDkU6ffxl8JtZSsCo41sgkoK2NxR5U/edit?usp=sharing">DEPO KOLKATA</a></li>
-                <li><a href="https://docs.google.com/spreadsheets/d/1Fg97N55x9pkQ09YFjJqS8Wdev0UmxhAshsqAQ3_8enA/edit?usp=sharing">DEPO PUNE</a></li>
-                <li><a href="https://docs.google.com/spreadsheets/d/1y16Xwy1wenXVut7m76uJJ2X61c-Ru5nGkQSElQl2JVo/edit?usp=sharing">DEPO BIHAR</a></li>
-                <li><a href="https://docs.google.com/spreadsheets/d/1qXi8q3gyInqMhWYyvpJPhFWhffyt0C2UumATWstfPGQ/edit?usp=sharing">DEPO JAIPUR</a></li>
-                <li><a href="https://docs.google.com/spreadsheets/d/15VsiMgG2ZNjVZTxxEc9lI4qMflAwwL_g3W1bSDZp3Z8/edit?usp=sharing">DEPO HYDERABAD</a></li>
-                <li><a href="https://docs.google.com/spreadsheets/d/1QZJHRMrbOafZ8Bd_Zi9twiaQudHCvGmVxu_MRnTbW1A/edit?usp=sharing">DEPO BANGALORE</a></li>
-                <li><a href="https://docs.google.com/spreadsheets/d/1A2Z7EyrsQfHa0y6drcfvRrp_8CsWAGP_Dq5s3odmW-g/edit?usp=sharing">DEPO MUMBAI</a></li>
-                <li><a href="https://docs.google.com/spreadsheets/d/1z44K4xslsGMqX9qJaAJMLvLXGpWmuZP25guMaH6iWM4/edit?usp=sharing">DEPO NOIDA</a></li>
-
                 
+                <li><a href="#">SHEETS</a></li><BR>
+                    <li><a href="https://docs.google.com/spreadsheets/d/1zPxDreLY-n6QTFsU97oOzhrpzA0n8lYm4B52nEB3YHg/edit?usp=sharing">DEPO LUDHIANA</a></li>
+                    <li><a href="https://docs.google.com/spreadsheets/d/1lMpMmZgmGq7jbaDkU6ffxl8JtZSsCo41sgkoK2NxR5U/edit?usp=sharing">DEPO KOLKATA</a></li>
+                    <li><a href="https://docs.google.com/spreadsheets/d/1Fg97N55x9pkQ09YFjJqS8Wdev0UmxhAshsqAQ3_8enA/edit?usp=sharing">DEPO PUNE</a></li>
+                    <li><a href="https://docs.google.com/spreadsheets/d/1y16Xwy1wenXVut7m76uJJ2X61c-Ru5nGkQSElQl2JVo/edit?usp=sharing">DEPO BIHAR</a></li>
+                    <li><a href="https://docs.google.com/spreadsheets/d/1qXi8q3gyInqMhWYyvpJPhFWhffyt0C2UumATWstfPGQ/edit?usp=sharing">DEPO JAIPUR</a></li>
+                    <li><a href="https://docs.google.com/spreadsheets/d/15VsiMgG2ZNjVZTxxEc9lI4qMflAwwL_g3W1bSDZp3Z8/edit?usp=sharing">DEPO HYDERABAD</a></li>
+                    <li><a href="https://docs.google.com/spreadsheets/d/1QZJHRMrbOafZ8Bd_Zi9twiaQudHCvGmVxu_MRnTbW1A/edit?usp=sharing">DEPO BANGALORE</a></li>
+                    <li><a href="https://docs.google.com/spreadsheets/d/1A2Z7EyrsQfHa0y6drcfvRrp_8CsWAGP_Dq5s3odmW-g/edit?usp=sharing">DEPO MUMBAI</a></li>
+                    <li><a href="https://docs.google.com/spreadsheets/d/1z44K4xslsGMqX9qJaAJMLvLXGpWmuZP25guMaH6iWM4/edit?usp=sharing">DEPO NOIDA</a></li>
+    
             </ul>
         </div>
 
-        
+        <!-- Dashboard -->
         <div class="dashboard">
             <h1 style="text-align: center;">AMBA LAMINATES DEPO'S PVT LTD.</h1>
             
-           
+            <!-- Date Filter Section -->
             <div class="date-filter">
                 <label for="start-date">Start Date:</label>
                 <input type="date" id="start-date">
                 <label for="end-date">End Date:</label>
                 <input type="date" id="end-date">
-                <button onclick="applyDateFilter()">Apply Filter</button>
+                <button onclick="fetchDepotData()">Apply Filter</button>
                 
-                
+                <!-- Depot Selection -->
                 <select id="sheet-dropdown" onchange="fetchDepotData()">
                     <option value="select depo">SELECT DEPO</option>
+                    <option value="all">ALL DEPO</option>  
                     <option value="ludhiana">DEPO LUDHIANA</option>
                     <option value="kolkata">DEPO KOLKATA</option>
                     <option value="pune">DEPO PUNE</option>
@@ -51,11 +51,11 @@
                     <option value="hyderabad">DEPO HYDERABAD</option>
                     <option value="bangalore">DEPO BANGALORE</option>
                     <option value="mumbai">DEPO MUMBAI</option>
-                    <option value="noida"> DEPO NOIDA</option>
+                    <option value="noida">DEPO NOIDA</option>
                 </select>
             </div>
 
-            <!-- Stats cards -->
+            <!-- Stats Section -->
             <div class="stats">
                 <div class="stat-card">
                     <h2>Total Stock</h2>
@@ -74,7 +74,6 @@
     </div>
 
     <script>
-        // URLs for each depot's sheets (stock, dispatch, and purchase)
         const depotDataUrls = {
             'ludhiana': {
                 stock: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vR7pPNzdOfIhpyhiaziaKt9OOJRl92ntl_vQrOpL20VZ_ODsPU2MocXcli_vxTmivtlBsoZZR6c7PxA/pub?gid=1105757494&single=true&output=csv&sheet=IMS',
@@ -87,7 +86,6 @@
                 purchase: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQZBUcXwlTlsVyl86qCPETDgTB0tIIvm9-Z_i-eS5WmbjMOS38G1jzpgtrNUbj496bnfmRjpUVj-v62/pub?gid=1525898616&single=true&output=csv&sheet=In/Out(Manul)'
 
             },
-
             'pune' :{
                 stock: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ2RxpcHgMDUXi1FoXf1ojiUtsHmUc9o9AJKsBOloffhdH5MuTJpzQWM3XMQr6vTMCtQ6HzXVCL5Zzj/pub?gid=1105757494&single=true&output=csv',
                 dispatch: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ2RxpcHgMDUXi1FoXf1ojiUtsHmUc9o9AJKsBOloffhdH5MuTJpzQWM3XMQr6vTMCtQ6HzXVCL5Zzj/pub?gid=1865060622&single=true&output=csv',
@@ -129,45 +127,80 @@
                 purchase : 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQIED3dY_tkzrV31jBMKpRKsSq3t1PaTdWsJhbNYdGvRiK-lEyQgxG6e2indym7H_3NO7PUNZDoVe_2/pub?gid=1525898616&single=true&output=csv'
             }
             
-            };
-        
+            
+            
+            
+            
+        };
 
-       
-        function applyDateFilter() {
-            fetchDepotData();  
-        }
-
-        // Fetch Depot Data
         function fetchDepotData() {
             const selectedDepot = document.getElementById("sheet-dropdown").value;
             const startDate = document.getElementById("start-date").value;
             const endDate = document.getElementById("end-date").value;
 
-            if (selectedDepot === "select depo") return; 
-            const urls = depotDataUrls[selectedDepot];
+            if (selectedDepot === "all") {
+                fetchAllDepots(startDate, endDate);
+            } else {
+                fetchSingleDepot(selectedDepot, startDate, endDate);
+            }
+        }
+
+        function fetchAllDepots(startDate, endDate) {
+            let totalStock = 0, totalDispatch = 0, totalPurchase = 0;
+            let fetchPromises = [];
+
+            document.getElementById("total-stock").textContent = "Loading...";
+            document.getElementById("total-dispatch").textContent = "Loading...";
+            document.getElementById("total-purchase").textContent = "Loading...";
+
+            Object.keys(depotDataUrls).forEach(depot => {
+                let urls = depotDataUrls[depot];
+
+                fetchPromises.push(
+                    fetch(urls.stock).then(res => res.text()).then(data => {
+                        totalStock += processStockData(data);
+                    })
+                );
+
+                fetchPromises.push(
+                    fetch(urls.dispatch).then(res => res.text()).then(data => {
+                        totalDispatch += processData(data, startDate, endDate);
+                    })
+                );
+
+                fetchPromises.push(
+                    fetch(urls.purchase).then(res => res.text()).then(data => {
+                        totalPurchase += processData(data, startDate, endDate);
+                    })
+                );
+            });
+
+            Promise.all(fetchPromises).then(() => {
+                document.getElementById("total-stock").textContent = totalStock;
+                document.getElementById("total-dispatch").textContent = totalDispatch;
+                document.getElementById("total-purchase").textContent = totalPurchase;
+            }).catch(error => {
+                console.error("Error fetching data:", error);
+            });
+        }
+
+        function fetchSingleDepot(depot, startDate, endDate) {
+            let urls = depotDataUrls[depot];
 
            
-            fetchTotalStock(urls.stock);
+            fetch(urls.stock)
+                .then(response => response.text())
+                .then(data => {
+                    const totalStock = processStockData(data);
+                    document.getElementById("total-stock").textContent = totalStock;
+                })
+                .catch(error => console.error("Error fetching stock data:", error));
 
-            // Apply date filter only for dispatch and purchase
+            
             fetchData(urls.dispatch, startDate, endDate, "total-dispatch");
             fetchData(urls.purchase, startDate, endDate, "total-purchase");
         }
 
-        
-        function fetchTotalStock(url) {
-            fetch(url)
-                .then(response => response.text())
-                .then(stockData => {
-                    const totalStock = calculateTotalStock(stockData);
-                    document.getElementById("total-stock").textContent = totalStock;
-                })
-                .catch(error => {
-                    console.error('Error fetching stock data:', error);
-                });
-        }
-
-      
         function fetchData(url, startDate, endDate, elementId) {
             fetch(url)
                 .then(response => response.text())
@@ -175,40 +208,18 @@
                     const total = processData(data, startDate, endDate);
                     document.getElementById(elementId).textContent = total;
                 })
-                .catch(error => {
-                    console.error(`Error fetching data for ${elementId}:`, error);
-                });
+                .catch(error => console.error(`Error fetching data for ${elementId}:`, error));
         }
 
-        
         function parseDate(dateStr) {
             if (!dateStr) return null;
             const parts = dateStr.trim().split(/[\/\s-]/);
             if (parts.length < 3) return null;
-
             let [day, month, year] = parts;
             if (year.length === 2) year = "20" + year;
-            
             return new Date(`${year}-${month}-${day}`);
         }
 
-        
-        function calculateTotalStock(csvText) {
-            const rows = csvText.split("\n");
-            if (rows.length < 2) return 0;
-
-            let total = 0;
-            rows.slice(1).forEach(row => {
-                const columns = row.split(",");
-                if (columns.length < 5) return; 
-                const quantity = parseInt(columns[4] || 0);  
-                total += quantity;
-            });
-
-            return total;
-        }
-
-       
         function processData(csvText, startDate, endDate) {
             const rows = csvText.split("\n");
             if (rows.length < 2) return 0;
@@ -225,18 +236,27 @@
 
             rows.slice(1).forEach(row => {
                 const columns = row.split(",");
-                if (columns.length <= Math.max(dateIndex, quantityIndex)) return;
-
-                const dateStr = columns[dateIndex]?.trim();
+                const rowDate = parseDate(columns[dateIndex]?.trim());
                 const value = parseInt(columns[quantityIndex] || 0, 10);
-                const rowDate = parseDate(dateStr);
 
-                if (!rowDate) return;
+                if (!rowDate || (start && end && (rowDate < start || rowDate > end))) return;
+                total += value;
+            });
 
-                if ((start && end && rowDate >= start && rowDate <= end) ||
-                    (start && end && start.getTime() === end.getTime() && rowDate.getTime() === start.getTime())) {
-                    total += value;
-                }
+            return total;
+        }
+
+        function processStockData(csvText) {
+            const rows = csvText.split("\n");
+            if (rows.length < 2) return 0;
+
+            const quantityIndex = 4; 
+
+            let total = 0;
+            rows.slice(1).forEach(row => {
+                const columns = row.split(",");
+                const value = parseInt(columns[quantityIndex] || 0, 10);
+                total += value;
             });
 
             return total;
