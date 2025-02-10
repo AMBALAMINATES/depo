@@ -7,40 +7,52 @@
     <link rel="icon" href="images.jpg" type="image/x-icon">
     <link rel="stylesheet" href="s.css">
 </head>
-<body>
-    <div class="container">
-        <!-- Sidebar -->
-        <div class="sidebar">
+<body class="login">
+
+    <div id="login-container">
+        <div class="login-card">
+            <h2>Login</h2>
+            <form id="login-form">
+                <input type="text" id="username" placeholder="Username" required><br>
+                <input type="password" id="password" placeholder="Password" required><br>
+                <button type="submit">Login</button>
+            </form>
+            <p id="error-message"></p>
+        </div>
+    </div>
+
+
+    
+   
+
+    <div class="container" id="container" style="display: none;">
+       
+        <div class="sidebar" id="sidebar">
             <h2>AMBA LAMINATES DEPO'S PVT LTD.<br>(ALL SHEETS)</h2>
             <ul>
-                
                 <li><a href="#">SHEETS</a></li><BR>
-                    <li><a href="https://docs.google.com/spreadsheets/d/1zPxDreLY-n6QTFsU97oOzhrpzA0n8lYm4B52nEB3YHg/edit?usp=sharing">DEPO LUDHIANA</a></li>
-                    <li><a href="https://docs.google.com/spreadsheets/d/1lMpMmZgmGq7jbaDkU6ffxl8JtZSsCo41sgkoK2NxR5U/edit?usp=sharing">DEPO KOLKATA</a></li>
-                    <li><a href="https://docs.google.com/spreadsheets/d/1Fg97N55x9pkQ09YFjJqS8Wdev0UmxhAshsqAQ3_8enA/edit?usp=sharing">DEPO PUNE</a></li>
-                    <li><a href="https://docs.google.com/spreadsheets/d/1y16Xwy1wenXVut7m76uJJ2X61c-Ru5nGkQSElQl2JVo/edit?usp=sharing">DEPO BIHAR</a></li>
-                    <li><a href="https://docs.google.com/spreadsheets/d/1qXi8q3gyInqMhWYyvpJPhFWhffyt0C2UumATWstfPGQ/edit?usp=sharing">DEPO JAIPUR</a></li>
-                    <li><a href="https://docs.google.com/spreadsheets/d/15VsiMgG2ZNjVZTxxEc9lI4qMflAwwL_g3W1bSDZp3Z8/edit?usp=sharing">DEPO HYDERABAD</a></li>
-                    <li><a href="https://docs.google.com/spreadsheets/d/1QZJHRMrbOafZ8Bd_Zi9twiaQudHCvGmVxu_MRnTbW1A/edit?usp=sharing">DEPO BANGALORE</a></li>
-                    <li><a href="https://docs.google.com/spreadsheets/d/1A2Z7EyrsQfHa0y6drcfvRrp_8CsWAGP_Dq5s3odmW-g/edit?usp=sharing">DEPO MUMBAI</a></li>
-                    <li><a href="https://docs.google.com/spreadsheets/d/1z44K4xslsGMqX9qJaAJMLvLXGpWmuZP25guMaH6iWM4/edit?usp=sharing">DEPO NOIDA</a></li>
-    
+                <li><a href="https://docs.google.com/spreadsheets/d/1zPxDreLY-n6QTFsU97oOzhrpzA0n8lYm4B52nEB3YHg/edit?usp=sharing">DEPO LUDHIANA</a></li>
+                <li><a href="https://docs.google.com/spreadsheets/d/1lMpMmZgmGq7jbaDkU6ffxl8JtZSsCo41sgkoK2NxR5U/edit?usp=sharing">DEPO KOLKATA</a></li>
+                <li><a href="https://docs.google.com/spreadsheets/d/1Fg97N55x9pkQ09YFjJqS8Wdev0UmxhAshsqAQ3_8enA/edit?usp=sharing">DEPO PUNE</a></li>
+                <li><a href="https://docs.google.com/spreadsheets/d/1y16Xwy1wenXVut7m76uJJ2X61c-Ru5nGkQSElQl2JVo/edit?usp=sharing">DEPO BIHAR</a></li>
+                <li><a href="https://docs.google.com/spreadsheets/d/1qXi8q3gyInqMhWYyvpJPhFWhffyt0C2UumATWstfPGQ/edit?usp=sharing">DEPO JAIPUR</a></li>
+                <li><a href="https://docs.google.com/spreadsheets/d/15VsiMgG2ZNjVZTxxEc9lI4qMflAwwL_g3W1bSDZp3Z8/edit?usp=sharing">DEPO HYDERABAD</a></li>
+                <li><a href="https://docs.google.com/spreadsheets/d/1QZJHRMrbOafZ8Bd_Zi9twiaQudHCvGmVxu_MRnTbW1A/edit?usp=sharing">DEPO BANGALORE</a></li>
+                <li><a href="https://docs.google.com/spreadsheets/d/1A2Z7EyrsQfHa0y6drcfvRrp_8CsWAGP_Dq5s3odmW-g/edit?usp=sharing">DEPO MUMBAI</a></li>
+                <li><a href="https://docs.google.com/spreadsheets/d/1z44K4xslsGMqX9qJaAJMLvLXGpWmuZP25guMaH6iWM4/edit?usp=sharing">DEPO NOIDA</a></li>
             </ul>
         </div>
 
-        <!-- Dashboard -->
+       
         <div class="dashboard">
             <h1 style="text-align: center;">AMBA LAMINATES DEPO'S PVT LTD.</h1>
-            
-            <!-- Date Filter Section -->
             <div class="date-filter">
-                <label for="start-date">Start Date:</label>
+                <label for="start-date" style="color: black;">Start Date:</label>
                 <input type="date" id="start-date">
-                <label for="end-date">End Date:</label>
+                <label for="end-date" style="color: black;">End Date:</label>
                 <input type="date" id="end-date">
                 <button onclick="fetchDepotData()">Apply Filter</button>
-                
-                <!-- Depot Selection -->
+
                 <select id="sheet-dropdown" onchange="fetchDepotData()">
                     <option value="select depo">SELECT DEPO</option>
                     <option value="all">ALL DEPO</option>  
@@ -56,7 +68,6 @@
                 </select>
             </div>
 
-            <!-- Stats Section -->
             <div class="stats">
                 <div class="stat-card">
                     <h2>Total Stock</h2>
@@ -75,6 +86,40 @@
     </div>
 
     <script>
+      
+        const validCredentials = {
+            'admin': 'ambalam@85',
+            'user1': 'user@123'
+        };
+
+       
+        document.getElementById('login-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if (validCredentials[username] && validCredentials[username] === password) {
+              
+                document.getElementById('login-container').style.display = 'none';
+                document.getElementById('container').style.display = 'block';
+
+                
+                document.body.classList.remove('login');
+                document.body.classList.add('dashboard');
+
+               
+                if (username === 'admin') {
+                    document.getElementById('sidebar').style.display = 'block'; 
+                } else if (username === 'user1') {
+                    document.getElementById('sidebar').style.display = 'none'; 
+                }
+            } else {
+                document.getElementById('error-message').textContent = 'Wrong credentials. Please try again.';
+            }
+        });
+
+      
         const depotDataUrls = {
             'ludhiana': {
                 stock: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vR7pPNzdOfIhpyhiaziaKt9OOJRl92ntl_vQrOpL20VZ_ODsPU2MocXcli_vxTmivtlBsoZZR6c7PxA/pub?gid=1105757494&single=true&output=csv&sheet=IMS',
