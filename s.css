@@ -1,13 +1,25 @@
+
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
     height: 100vh;
-    background-color:#878787;
 }
 
-/* Sidebar Styling */
+
+body.login {
+    background-color:lightyellow; 
+    
+}
+
+
+body.dashboard {
+    background-color:#878787 ; 
+    color: #fff; 
+}
+
+
 .sidebar {
     background-color: orange;
     color: black;
@@ -45,7 +57,7 @@ body {
     color: lightgreen;
 }
 
-/* Main Dashboard Section */
+
 .container {
     display: flex;
     margin-left: 250px; 
@@ -54,7 +66,7 @@ body {
     overflow-x: auto;
 }
 
-/* Dashboard Content */
+
 .dashboard {
     width: 100%;
     text-align: center;
@@ -66,9 +78,7 @@ body {
     color: black;
 }
 
-/* Date Filter Section */
 
-    
 date-filter {
     display: flex;
     align-items: center;
@@ -119,7 +129,7 @@ date-filter {
     gap: 20px;
 }
 
-/* Stat Card Styling */
+
 .stat-card {
     background-color: #ffffff;
     padding: 20px;
@@ -146,6 +156,59 @@ date-filter {
     font-size: 24px;
     font-weight: bold;
     color: #1abc9c;
+}
+
+#login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    margin-left: 520px;
+    margin-bottom: 200px;
+}
+
+
+.login-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+}
+
+.login-card h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.login-card input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.login-card button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.login-card button:hover {
+    background-color: #45a049;
+}
+
+.login-card p {
+    color: red;
+    font-size: 14px;
 }
 
 
@@ -181,47 +244,6 @@ date-filter {
 
     .stat-card p {
         font-size: 20px; 
-    }
-}
-
-/* For Mobile Phones */
-@media (max-width: 480px) {
-    .sidebar {
-        width: 150px; 
-        padding: 10px;
-    }
-
-    .container {
-        margin-left: 150px; 
-        padding: 15px;
-    }
-
-    .date-filter {
-        margin-left: 10px;
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .date-filter input,
-    .date-filter button {
-        width: 100%;
-        margin-bottom: 8px;
-    }
-
-    .stats {
-        grid-template-columns: 1fr; 
-    }
-
-    .stat-card {
-        padding: 15px; 
-    }
-
-    .stat-card h2 {
-        font-size: 16px; 
-    }
-
-    .stat-card p {
-        font-size: 18px; 
     }
 }
 
