@@ -1,4 +1,3 @@
-
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -7,28 +6,24 @@ body {
     height: 100vh;
 }
 
-
 body.login {
-    background-color:lightyellow; 
-    
+    background-color:lightgoldenrodyellow;
 }
-
 
 body.dashboard {
-    background-color:#878787 ; 
-    color: #fff; 
+    background-color: #878787;
+    color: #fff;
 }
-
 
 .sidebar {
     background-color: orange;
     color: black;
-    width: 250px; 
+    width: 250px;
     padding: 20px;
     box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1);
-    position: fixed; 
+    position: fixed;
     top: 0;
-    left: 0; 
+    left: 0;
     height: 100%;
 }
 
@@ -57,15 +52,13 @@ body.dashboard {
     color: lightgreen;
 }
 
-
 .container {
     display: flex;
-    margin-left: 250px; 
+    margin-left: 250px;
     width: 100%;
     padding: 30px;
     overflow-x: auto;
 }
-
 
 .dashboard {
     width: 100%;
@@ -78,28 +71,27 @@ body.dashboard {
     color: black;
 }
 
-
-date-filter {
+.date-filter {
     display: flex;
     align-items: center;
     gap: 10px;
-    }
-    
-    .date-filter label {
+}
+
+.date-filter label {
     margin-right: 10px;
-    }
-    
-    .date-filter input[type="date"] {
+}
+
+.date-filter input[type="date"] {
     width: 150px;
-    }
-    
-    .date-filter button {
+}
+
+.date-filter button {
     margin-right: 10px;
-    }
-    
-    .date-filter select {
+}
+
+.date-filter select {
     width: 150px;
-    }
+}
 
 .date-filter input {
     padding: 8px;
@@ -128,7 +120,6 @@ date-filter {
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 20px;
 }
-
 
 .stat-card {
     background-color: #ffffff;
@@ -162,11 +153,13 @@ date-filter {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 80vh;
-    margin-left: 520px;
-    margin-bottom: 200px;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }
-
 
 .login-card {
     background-color: #fff;
@@ -175,6 +168,7 @@ date-filter {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 300px;
     text-align: center;
+    height: 50vh;
 }
 
 .login-card h2 {
@@ -211,39 +205,130 @@ date-filter {
     font-size: 14px;
 }
 
-
-@media (max-width: 768px) {
+/* Media Query for smaller screens (Mobile/Tablets) */
+@media (max-width: 1024px) {
     .sidebar {
-        width: 200px; 
+        width: 200px;
         padding: 15px;
     }
 
     .container {
-        margin-left: 200px; 
+        margin-left: 200px;
     }
 
     .date-filter {
         margin-left: 20px;
-        flex-direction: column; 
+        flex-direction: column;
         align-items: flex-start;
     }
 
     .date-filter input,
     .date-filter button {
         width: 100%;
-        margin-bottom: 10px; 
+        margin-bottom: 10px;
     }
 
     .stats {
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     }
 
     .stat-card h2 {
-        font-size: 18px; 
+        font-size: 18px;
     }
 
     .stat-card p {
-        font-size: 20px; 
+        font-size: 20px;
     }
 }
 
+@media (max-width: 768px) {
+    .sidebar {
+        width: 180px;
+        padding: 10px;
+    }
+
+    .container {
+        margin-left: 180px;
+        padding: 15px;
+    }
+
+    .login-card {
+        width: 80%;
+        height: auto;
+        margin-top: 100px;
+    }
+
+    .sidebar h2 {
+        font-size: 12px;
+    }
+
+    .sidebar ul li a {
+        font-size: 16px;
+    }
+
+    .dashboard h1 {
+        font-size: 28px;
+    }
+
+    .stat-card {
+        padding: 15px;
+        margin-left: 10px;
+    }
+
+    .stat-card h2 {
+        font-size: 16px;
+    }
+
+    .stat-card p {
+        font-size: 18px;
+    }
+
+    #login-container {
+        margin-left: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .sidebar {
+        width: 150px;
+        padding: 8px;
+    }
+
+    .container {
+        margin-left: 150px;
+        padding: 10px;
+    }
+
+    .login-card {
+        width: 90%;
+        margin-top: 50px;
+    }
+
+    .date-filter {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .date-filter input,
+    .date-filter select,
+    .date-filter button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .stats {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+
+    .stat-card {
+        padding: 12px;
+    }
+
+    .stat-card h2 {
+        font-size: 14px;
+    }
+
+    .stat-card p {
+        font-size: 16px;
+    }
+}
