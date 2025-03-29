@@ -313,8 +313,7 @@ function processSummaryData(csvText, startDate, endDate) {
     return Array.from(summaryMap.entries()).map(([thickness, qty]) => ({ thickness, qty }));
 }
 
-// Function to Display Sales Summary
-// Function to Display Sales Summary with Better UI
+
 function displaySalesSummary(depot, summaryData) {
     const summaryContainer = document.getElementById("sales-summary");
     if (!summaryContainer) return;
@@ -331,7 +330,7 @@ function displaySalesSummary(depot, summaryData) {
     const table = document.createElement("table");
     table.style.margin = "20px auto";
     table.style.borderCollapse = "collapse";
-    table.style.width = "100%"; // Adjust width for better readability
+    table.style.width = "200%"; // Adjust width for better readability
     table.style.boxShadow = "0 4px 8px rgba(0,0,0,0.1)";
     table.style.borderRadius = "8px";
     table.style.overflow = "hidden";
@@ -356,7 +355,7 @@ function displaySalesSummary(depot, summaryData) {
         totalQty += row.qty;
     });
 
-    // Add Total Row with Bold Text
+    
     const totalRow = document.createElement("tr");
     totalRow.style.background = "#28a745"; // Green color for total row
     totalRow.style.color = "black";
@@ -370,7 +369,7 @@ function displaySalesSummary(depot, summaryData) {
 }
 
 
-// Function to Parse Date from CSV
+
 function parseDate(dateStr) {
     if (!dateStr) return null;
     const parts = dateStr.trim().split(/[\/\s-]/);
@@ -380,7 +379,7 @@ function parseDate(dateStr) {
     return new Date(`${year}-${month}-${day}`);
 }
 
-// Add Event Listener to Button
+
 document.addEventListener("DOMContentLoaded", () => {
     const summaryButton = document.createElement("button");
     summaryButton.textContent = "Sales Summary";
