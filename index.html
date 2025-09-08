@@ -31,21 +31,21 @@
             <h2>AMBA LAMINATES DEPO'S PVT LTD.<br>(ALL SHEETS)</h2>
             <ul>
                 <li><a href="#">SHEETS</a></li><BR>
-                <li><a href="https://docs.google.com/spreadsheets/d/1zPxDreLY-n6QTFsU97oOzhrpzA0n8lYm4B52nEB3YHg/edit?usp=sharing">DEPO LUDHIANA</a></li>
-                <li><a href="https://docs.google.com/spreadsheets/d/1lMpMmZgmGq7jbaDkU6ffxl8JtZSsCo41sgkoK2NxR5U/edit?usp=sharing">DEPO KOLKATA</a></li>
-                <li><a href="https://docs.google.com/spreadsheets/d/1Fg97N55x9pkQ09YFjJqS8Wdev0UmxhAshsqAQ3_8enA/edit?usp=sharing">DEPO PUNE</a></li>
-                <li><a href="https://docs.google.com/spreadsheets/d/1y16Xwy1wenXVut7m76uJJ2X61c-Ru5nGkQSElQl2JVo/edit?usp=sharing">DEPO BIHAR</a></li>
-                <li><a href="https://docs.google.com/spreadsheets/d/1qXi8q3gyInqMhWYyvpJPhFWhffyt0C2UumATWstfPGQ/edit?usp=sharing">DEPO JAIPUR</a></li>
-                <li><a href="https://docs.google.com/spreadsheets/d/15VsiMgG2ZNjVZTxxEc9lI4qMflAwwL_g3W1bSDZp3Z8/edit?usp=sharing">DEPO HYDERABAD</a></li>
-                <li><a href="https://docs.google.com/spreadsheets/d/1QZJHRMrbOafZ8Bd_Zi9twiaQudHCvGmVxu_MRnTbW1A/edit?usp=sharing">DEPO BANGALORE</a></li>
-                <li><a href="https://docs.google.com/spreadsheets/d/1A2Z7EyrsQfHa0y6drcfvRrp_8CsWAGP_Dq5s3odmW-g/edit?usp=sharing">DEPO MUMBAI</a></li>
-                <li><a href="https://docs.google.com/spreadsheets/d/1z44K4xslsGMqX9qJaAJMLvLXGpWmuZP25guMaH6iWM4/edit?usp=sharing">DEPO NOIDA</a></li>
+                <li><a href="https://docs.google.com/spreadsheets/d/1-hRH5pIbNkQamUIrvkSlN6BgDePMesYiBUz4TDoeTwA/edit?usp=sharing">DEPO LUDHIANA</a></li>
+                <li><a href="https://docs.google.com/spreadsheets/d/1ersyCRsKKgN_mWDH2zvmVFkuDW1Hd0FgY1whl49Q6uY/edit?usp=sharing">DEPO KOLKATA</a></li>
+                
+                <li><a href="https://docs.google.com/spreadsheets/d/1Ae6FPUhVF3L68j81L4O7ZqbQTDEsyd3EkN64RkjzTsw/edit?usp=sharing">DEPO BIHAR</a></li>
+                <li><a href="https://docs.google.com/spreadsheets/d/1YlmAQSPPEC6LJhEyZXiMqkch3hZjUSLiP1eorUzsoo8/edit?usp=sharing">DEPO JAIPUR</a></li>
+                <li><a href="https://docs.google.com/spreadsheets/d/1K9LCz1pKwvjj1AlV8WPiRUm2qQbe2ueNg9d_cKIgI0o/edit?usp=sharing">DEPO HYDERABAD</a></li>
+                <li><a href="https://docs.google.com/spreadsheets/d/1O8YsYN1BXBB5TYEZGM8KKZgsjx1bnEVT-ddwQx4v_j0/edit?usp=sharing">DEPO BANGALORE</a></li>
+                <li><a href="https://docs.google.com/spreadsheets/d/1_JfpQzVhSVannawWEEVJbZXf6kxILVC9uQMcHY-NDJ0/edit?usp=sharing">DEPO MUMBAI</a></li>
+                <li><a href="https://docs.google.com/spreadsheets/d/1UhnoLIC3aHdnU1_lj1FytnY41C4W-8Rruzcf3z_MLr4/edit?usp=sharing">DEPO INDORE</a></li>
             </ul>
         </div>
 
        
         <div class="dashboard">
-            <h1 style="text-align: center;">AMBA LAMINATES DEPO'S PVT LTD.(FY 24-25)</h1>
+            <h1 style="text-align: center;">AMBA LAMINATES DEPO'S PVT LTD.(FY 25-26)</h1>
             <div class="date-filter">
                 <label for="start-date" style="color: black;margin-left: 20px;">Start Date:</label>
                 <input type="date" id="start-date">
@@ -58,13 +58,13 @@
                     <option value="all">ALL DEPO</option>  
                     <option value="ludhiana">DEPO LUDHIANA</option>
                     <option value="kolkata">DEPO KOLKATA</option>
-                    <option value="pune">DEPO PUNE</option>
+                
                     <option value="bihar">DEPO BIHAR</option>
                     <option value="jaipur">DEPO JAIPUR</option>
                     <option value="hyderabad">DEPO HYDERABAD</option>
                     <option value="bangalore">DEPO BANGALORE</option>
                     <option value="mumbai">DEPO MUMBAI</option>
-                    <option value="noida">DEPO NOIDA</option>
+                    <option value="indore">DEPO NOIDA</option>
                 </select>
             </div>
 
@@ -125,55 +125,51 @@
       
         const depotDataUrls = {
             'ludhiana': {
-                stock: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vR7pPNzdOfIhpyhiaziaKt9OOJRl92ntl_vQrOpL20VZ_ODsPU2MocXcli_vxTmivtlBsoZZR6c7PxA/pub?gid=1105757494&single=true&output=csv&sheet=IMS',
-                dispatch: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vR7pPNzdOfIhpyhiaziaKt9OOJRl92ntl_vQrOpL20VZ_ODsPU2MocXcli_vxTmivtlBsoZZR6c7PxA/pub?gid=1865060622&single=true&output=csv',
-                purchase: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vR7pPNzdOfIhpyhiaziaKt9OOJRl92ntl_vQrOpL20VZ_ODsPU2MocXcli_vxTmivtlBsoZZR6c7PxA/pub?gid=1525898616&single=true&output=csv&sheet=In/Out(Manual)'
+                stock: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSQ_3UzgPqfyL04SV_UE0V3HfuUpWyKerjjPTqlXpPqMsu349q1IDdDgfwmv4bkgJAg3n1dYE3DvgKU/pub?gid=1105757494&single=true&output=csv',
+                dispatch: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSQ_3UzgPqfyL04SV_UE0V3HfuUpWyKerjjPTqlXpPqMsu349q1IDdDgfwmv4bkgJAg3n1dYE3DvgKU/pub?gid=1865060622&single=true&output=csv',
+                purchase: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSQ_3UzgPqfyL04SV_UE0V3HfuUpWyKerjjPTqlXpPqMsu349q1IDdDgfwmv4bkgJAg3n1dYE3DvgKU/pub?gid=1525898616&single=true&output=csv'
             },
             'kolkata':{
-                stock: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQZBUcXwlTlsVyl86qCPETDgTB0tIIvm9-Z_i-eS5WmbjMOS38G1jzpgtrNUbj496bnfmRjpUVj-v62/pub?gid=1105757494&single=true&output=csv',
-                dispatch: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQZBUcXwlTlsVyl86qCPETDgTB0tIIvm9-Z_i-eS5WmbjMOS38G1jzpgtrNUbj496bnfmRjpUVj-v62/pub?gid=1865060622&single=true&output=csv',
-                purchase: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQZBUcXwlTlsVyl86qCPETDgTB0tIIvm9-Z_i-eS5WmbjMOS38G1jzpgtrNUbj496bnfmRjpUVj-v62/pub?gid=1525898616&single=true&output=csv&sheet=In/Out(Manul)'
+                stock: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT88un_DlCtuBVI08qkT4EUaSYPXJTjKu7FHNZFqgOVvHiiZrSvQtQBknh45_NnMz1nQcs2HEf3_pPX/pub?gid=1105757494&single=true&output=csv',
+                dispatch: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT88un_DlCtuBVI08qkT4EUaSYPXJTjKu7FHNZFqgOVvHiiZrSvQtQBknh45_NnMz1nQcs2HEf3_pPX/pub?gid=1865060622&single=true&output=csv',
+                purchase: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT88un_DlCtuBVI08qkT4EUaSYPXJTjKu7FHNZFqgOVvHiiZrSvQtQBknh45_NnMz1nQcs2HEf3_pPX/pub?gid=1525898616&single=true&output=csv'
 
             },
-            'pune' :{
-                stock: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ2RxpcHgMDUXi1FoXf1ojiUtsHmUc9o9AJKsBOloffhdH5MuTJpzQWM3XMQr6vTMCtQ6HzXVCL5Zzj/pub?gid=1105757494&single=true&output=csv',
-                dispatch: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ2RxpcHgMDUXi1FoXf1ojiUtsHmUc9o9AJKsBOloffhdH5MuTJpzQWM3XMQr6vTMCtQ6HzXVCL5Zzj/pub?gid=1865060622&single=true&output=csv',
-                purchase : 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ2RxpcHgMDUXi1FoXf1ojiUtsHmUc9o9AJKsBOloffhdH5MuTJpzQWM3XMQr6vTMCtQ6HzXVCL5Zzj/pub?gid=1525898616&single=true&output=csv'
-            },
+            
 
             'bihar': {
-                stock: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTaZa56cQ9KsG6SldZ6oUCTd3Jty3toWw2boaNk2oMJWVT8nbPUSJEvMD7bpAHI3UxMgsF223pnt5jY/pub?gid=1105757494&single=true&output=csv',
-                dispatch: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTaZa56cQ9KsG6SldZ6oUCTd3Jty3toWw2boaNk2oMJWVT8nbPUSJEvMD7bpAHI3UxMgsF223pnt5jY/pub?gid=1865060622&single=true&output=csv',
-                purchase: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTaZa56cQ9KsG6SldZ6oUCTd3Jty3toWw2boaNk2oMJWVT8nbPUSJEvMD7bpAHI3UxMgsF223pnt5jY/pub?gid=1525898616&single=true&output=csv'
+                stock: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQy_FYsdWEAnThYM4fke0XHWD8fa2LFviA_pUUK1aWCS00NNH-gRMX4QdzoZWvfwA7kuxeOSEYRQiGN/pub?gid=1105757494&single=true&output=csv',
+                dispatch: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQy_FYsdWEAnThYM4fke0XHWD8fa2LFviA_pUUK1aWCS00NNH-gRMX4QdzoZWvfwA7kuxeOSEYRQiGN/pub?gid=1865060622&single=true&output=csv',
+                purchase: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQy_FYsdWEAnThYM4fke0XHWD8fa2LFviA_pUUK1aWCS00NNH-gRMX4QdzoZWvfwA7kuxeOSEYRQiGN/pub?gid=1525898616&single=true&output=csv'
             },
             'jaipur':{
-                stock: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT2C0Edo5nQ7uKGMbSz9LGKkX-r3nB8mFMIJfM6zMxvg3OTvRtjh67QBogfxZy7DVOiTYo-A6b0BXU3/pub?gid=1105757494&single=true&output=csv',
-                dispatch: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT2C0Edo5nQ7uKGMbSz9LGKkX-r3nB8mFMIJfM6zMxvg3OTvRtjh67QBogfxZy7DVOiTYo-A6b0BXU3/pub?gid=1865060622&single=true&output=csv',
-                purchase: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT2C0Edo5nQ7uKGMbSz9LGKkX-r3nB8mFMIJfM6zMxvg3OTvRtjh67QBogfxZy7DVOiTYo-A6b0BXU3/pub?gid=1525898616&single=true&output=csv'
+                stock: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSqzDNJJBij0IPIxiMf34cNQCzbYRR1EIAwhCzbHyU9TYGsiAj7P2m9a73L6Y1MhCdE2NyIfDc-37yx/pub?gid=1105757494&single=true&output=csv',
+                dispatch: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSqzDNJJBij0IPIxiMf34cNQCzbYRR1EIAwhCzbHyU9TYGsiAj7P2m9a73L6Y1MhCdE2NyIfDc-37yx/pub?gid=1865060622&single=true&output=csv',
+                purchase: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSqzDNJJBij0IPIxiMf34cNQCzbYRR1EIAwhCzbHyU9TYGsiAj7P2m9a73L6Y1MhCdE2NyIfDc-37yx/pub?gid=1525898616&single=true&output=csv'
 
 
             },
             'hyderabad':{
-                stock: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTwJH9ne9oJLOMPgFbqn9bq1N2i79HGTYLKXTbcFPsFjjvAsVEACQ6Pv44HP0ykpr0H4dD3LWd3X1yb/pub?gid=1105757494&single=true&output=csv',
-                dispatch : 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTwJH9ne9oJLOMPgFbqn9bq1N2i79HGTYLKXTbcFPsFjjvAsVEACQ6Pv44HP0ykpr0H4dD3LWd3X1yb/pub?gid=1865060622&single=true&output=csv',
-                purchase: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTwJH9ne9oJLOMPgFbqn9bq1N2i79HGTYLKXTbcFPsFjjvAsVEACQ6Pv44HP0ykpr0H4dD3LWd3X1yb/pub?gid=1525898616&single=true&output=csv'
+                stock: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQzkBag8Cmvjfjpj5qlJkGhL8tmnqG6JlO6sOMKMjkhbRQxHUlSps3fOqYCAjemBFf5ZGjti9u3rlvj/pub?gid=1105757494&single=true&output=csv',
+                dispatch : 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQzkBag8Cmvjfjpj5qlJkGhL8tmnqG6JlO6sOMKMjkhbRQxHUlSps3fOqYCAjemBFf5ZGjti9u3rlvj/pub?gid=1865060622&single=true&output=csv',
+                purchase: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQzkBag8Cmvjfjpj5qlJkGhL8tmnqG6JlO6sOMKMjkhbRQxHUlSps3fOqYCAjemBFf5ZGjti9u3rlvj/pub?gid=1525898616&single=true&output=csv'
             },
 
             'bangalore':{
-                stock:'https://docs.google.com/spreadsheets/d/e/2PACX-1vRJjERoL5Vy4T6YDvQ-_g3RrERwzt9lR0wmCn1bg8dnLad1SPTbLysnZuJTQ66N_bx_KUcsur8jCkf-/pub?gid=1105757494&single=true&output=csv',
-                dispatch: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRJjERoL5Vy4T6YDvQ-_g3RrERwzt9lR0wmCn1bg8dnLad1SPTbLysnZuJTQ66N_bx_KUcsur8jCkf-/pub?gid=1865060622&single=true&output=csv',
-                purchase: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRJjERoL5Vy4T6YDvQ-_g3RrERwzt9lR0wmCn1bg8dnLad1SPTbLysnZuJTQ66N_bx_KUcsur8jCkf-/pub?gid=1525898616&single=true&output=csv'
+                stock:'https://docs.google.com/spreadsheets/d/e/2PACX-1vRs0n4MFU3f3SGdfWl7xoRQPGI1A7aFdmvzrr8LsIEO4fCepZA4n7mFHv6El-30krUeWk_86daID5vi/pub?gid=1105757494&single=true&output=csv',
+                dispatch: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRs0n4MFU3f3SGdfWl7xoRQPGI1A7aFdmvzrr8LsIEO4fCepZA4n7mFHv6El-30krUeWk_86daID5vi/pub?gid=1865060622&single=true&output=csv',
+                purchase: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRs0n4MFU3f3SGdfWl7xoRQPGI1A7aFdmvzrr8LsIEO4fCepZA4n7mFHv6El-30krUeWk_86daID5vi/pub?gid=1525898616&single=true&output=csv'
             },
 
             'mumbai':{
-                stock:'https://docs.google.com/spreadsheets/d/e/2PACX-1vT-0ceROfYipuMAr0WkxbbIDMmQVsp4aE8BBRgHFEw1twpUQmCRghm3ZN2ZFZzdf1n8RlTfwpyfz9mH/pub?gid=1105757494&single=true&output=csv',
-                dispatch: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT-0ceROfYipuMAr0WkxbbIDMmQVsp4aE8BBRgHFEw1twpUQmCRghm3ZN2ZFZzdf1n8RlTfwpyfz9mH/pub?gid=1865060622&single=true&output=csv',
-                purchase: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT-0ceROfYipuMAr0WkxbbIDMmQVsp4aE8BBRgHFEw1twpUQmCRghm3ZN2ZFZzdf1n8RlTfwpyfz9mH/pub?gid=1525898616&single=true&output=csv'
+                stock:'https://docs.google.com/spreadsheets/d/e/2PACX-1vRSqZHqr9lf6ZLoMitwiPxzVwPkSXgB3TZqMybLvDAoWw8VvsEeGb9K-OEOWJP6np1OFJK14OWxeQL-/pub?gid=1105757494&single=true&output=csv',
+                dispatch: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRSqZHqr9lf6ZLoMitwiPxzVwPkSXgB3TZqMybLvDAoWw8VvsEeGb9K-OEOWJP6np1OFJK14OWxeQL-/pub?gid=1865060622&single=true&output=csv',
+                purchase: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRSqZHqr9lf6ZLoMitwiPxzVwPkSXgB3TZqMybLvDAoWw8VvsEeGb9K-OEOWJP6np1OFJK14OWxeQL-/pub?gid=1525898616&single=true&output=csv'
             },
-            'noida':{
-                stock: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQIED3dY_tkzrV31jBMKpRKsSq3t1PaTdWsJhbNYdGvRiK-lEyQgxG6e2indym7H_3NO7PUNZDoVe_2/pub?gid=1105757494&single=true&output=csv',
-                dispatch: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQIED3dY_tkzrV31jBMKpRKsSq3t1PaTdWsJhbNYdGvRiK-lEyQgxG6e2indym7H_3NO7PUNZDoVe_2/pub?gid=1865060622&single=true&output=csv',
-                purchase : 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQIED3dY_tkzrV31jBMKpRKsSq3t1PaTdWsJhbNYdGvRiK-lEyQgxG6e2indym7H_3NO7PUNZDoVe_2/pub?gid=1525898616&single=true&output=csv'
+            'indore':{
+                stock: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRcLlMXfE-xTngh0E34VH2D7w3CMUUbxXt7mRdnPmJ8k4evAJ1YBPNwMYg9TKahL2cD-P1bb9Q6Gl9n/pub?gid=1105757494&single=true&output=csv',
+                dispatch: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRcLlMXfE-xTngh0E34VH2D7w3CMUUbxXt7mRdnPmJ8k4evAJ1YBPNwMYg9TKahL2cD-P1bb9Q6Gl9n/pub?gid=1865060622&single=true&output=csv',
+                purchase : 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRcLlMXfE-xTngh0E34VH2D7w3CMUUbxXt7mRdnPmJ8k4evAJ1YBPNwMYg9TKahL2cD-P1bb9Q6Gl9n/pub?gid=1525898616&single=true&output=csv'
             }
             
             
@@ -284,7 +280,7 @@ function processSummaryData(csvText, startDate, endDate) {
     if (rows.length < 2) return [];
 
     const headers = rows[0].split(",");
-    const thicknessIndex = 7; // H column for thickness
+    const thicknessIndex = 8; // H column for thickness
     const qtyIndex = 4; // E column for quantity
     const dateIndex = headers.findIndex(h => h.toLowerCase().includes("date"));
 
